@@ -13,7 +13,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework.authtoken import views
 
 from goods.views import GoodsListViewSet, CategoryViewSet
-from user.views import SmsCodeViewset
+from user.views import SmsCodeViewset, UserViewSet
 
 router = DefaultRouter()
 
@@ -22,7 +22,12 @@ router.register(r'goods', GoodsListViewSet, base_name='goods')
 
 # 商品分类
 router.register(r'categorys', CategoryViewSet, base_name='categorys')
+
+# 验证码
 router.register(r'codes', SmsCodeViewset, base_name='codes')
+
+# 注册
+router.register(r'users', UserViewSet, base_name='users')
 
 urlpatterns = [
 
